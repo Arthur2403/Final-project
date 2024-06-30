@@ -1,0 +1,283 @@
+.open{
+    display: flex !important;
+    padding: 0em !important;
+}
+a{
+    color: #3E77AA;
+    text-decoration: none;
+}
+a:hover{
+    color:rgb(255, 127, 80);
+    text-decoration: underline;
+}
+.header{
+    border-bottom: 1px solid gray;
+    padding-bottom: 0.5em;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    &__burger{
+        display: none;
+        position: relative;
+        z-index: 51;
+        align-items: center;
+        justify-content: flex-start;
+        width: 90px;
+        height: 54px;
+        margin-right: 0em;
+    }
+    &__burger span{
+        height: 4px;
+        width: 80%;
+        transform: scale(1);
+        background-color: gray;
+    }
+    &__burger::before, &__burger::after{
+        content: '';
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        background-color: gray;
+        transition: all 0.3s ease 0s;
+    }
+    &__burger::before{
+        top: 0;
+    }
+    &__burger::after{
+        bottom: 0;
+    }
+    &__burger.active span{
+        transform: scale(0);
+    }
+    &__burger.active::before{
+        top: 50%;
+        transform: rotate(-45deg) translate(0, -50%);
+    }
+    &__burger.active::after{
+        bottom: 50%;
+        transform: rotate(45deg) translate(0, 50%);
+    }
+    @media (width < 900px) {
+        .sections{
+            display: none;
+        }
+        &__burger{
+            display: flex;
+        }
+        &__icon{
+            display: none;
+        }
+        &__name{
+            margin-top: 5em;
+            color: white;
+        }
+        &__catalog{
+            margin-left: 0em !important;
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+        &__news{
+            margin: 0em !important;
+        }
+        &__menu{
+            display: none;
+        }
+        &__item1{
+            display: none;
+            padding: 0em;
+            flex-direction: column;
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            overflow-y: auto;
+            color: white;
+            padding: 50px 40px;
+            background-color: black;
+            animation: burger-Animation 0.4s;
+            @keyframes burger-Animation {
+                0% {opacity: 0%;}
+                100% {opacity: 100%;}
+            }
+        }
+    }
+    &__link{
+        color: black;
+    }
+    &__brand{
+        display: inline-flex;
+        align-items: end;
+    }
+    &__icon{
+        height: 3em;
+        width: 3em;
+    }
+    &__name{
+        font-size: xx-large;
+        margin-left: 1em;
+    }
+    &__catalog{
+        display: inline-flex;
+        margin-left: 5em;
+        align-items: end;
+        position: relative;
+    }
+    &__catalogword{
+        font-size: xx-large;
+        margin-left: 1em;
+    }
+    &__news{
+        display: inline-flex;
+        align-items: end;
+        margin-left: 5em;
+    }
+    &__newsword{
+        font-size: xx-large;
+        margin-left: 1em;
+    }
+    &__buttons{
+        display: inline-flex;
+        align-items: end;
+        margin-right: 0.5em;
+    }
+    &__log{
+        height: 3em;
+        width: 7em;
+        border-radius: 15%;
+        background-color: rgb(227, 227, 227);
+        color: gray;
+        border: none;
+    }
+    &__log:hover{
+        background-color: rgb(180, 180, 180);
+        color: white;
+    }
+    &__signin{
+        height: 3em;
+        width: 7em;
+        margin-left: 1em;
+        border-radius: 15%;
+        background-color: rgb(144, 255, 84);
+        color: rgb(255, 255, 255);
+        border: none;
+    }
+    &__signin:hover{
+        background-color: rgb(116, 195, 77);
+    }
+}
+.item{
+    margin: 2em;
+    display: flex;
+    &__img{
+        height: 40em;
+        width: 40em;
+        margin-right: 5em;
+    }
+    &__name{
+        font-weight: bold;
+        font-size: x-large;
+    }
+    &__details{
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid gray;
+        border-top-left-radius: 0.5em;
+        border-top-right-radius: 0.5em;
+        border-bottom: none;
+        width: 30em;
+        padding: 0.3em 1em;
+    }
+    &__seller-rating{
+        display: flex;
+        flex-direction: column;
+    }
+    &__seller{
+        font-size: medium;
+        color: gray;
+        height: 1em;
+        margin: 0em;
+    }
+    &__rating{
+        font-weight: bold;
+        height: 1em;
+        margin: 0em; 
+        margin-top: 0.5em;
+    }
+    &__message{
+        height: 3em;
+        width: 3em;
+    }
+    &__main{
+        display: flex;
+        width: 30em;
+        height: 6em;
+        padding: 0em 1em;
+        border: 1px solid gray;
+        border-bottom-left-radius: 0.5em;
+        border-bottom-right-radius: 0.5em;
+    }
+    &__price{
+        margin-top: 0.2em;
+        font-size: x-large;
+        font-weight: bold;
+        margin-right: 2em;
+        position: relative;
+    }
+    &__new-price{
+        display: inline-flex;
+        flex-direction: column;
+    }
+    &__onsale{
+        color: red;
+        margin-top: 0em;
+    }
+    &__price-onsale{
+        font-size: small;
+        color: gray;
+        text-decoration: line-through;
+    }
+    &__price::after{
+        content: 'In stock';
+        font-size: medium;
+        position: absolute;
+        font-weight: bold;
+        color: #47ff47;
+        top: 2em;
+        left: 0em;
+    }
+    &__buy{
+        width: 15em;
+        height: 3em;
+        margin-top: 0.8em;
+        background-color: rgb(1, 147, 1);
+        color: white;
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+        border: none;
+        border-radius: 0.5em;
+        font-weight: bold;
+        margin-right: 1em;
+    }
+    &__buy:hover{
+        background-color: rgb(0, 196, 0);
+    }
+    &__credit{
+        width: 15em;
+        height: 3em;
+        margin-top: 0.8em;
+        background-color: white;
+        color: rgb(0, 196, 0);
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+        border: 1px solid rgb(0, 196, 0);
+        border-radius: 0.5em;
+        font-weight: bold;
+    }
+    &__credit:hover{
+        background-color: rgba(0, 182, 0, 0.040);
+    }
+}

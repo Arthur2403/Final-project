@@ -1,0 +1,79 @@
+@use '../variables/breakpoints-media' as *;
+
+@include desktop-big{
+    .electrical-goods, .home-items, .garten-items, .sale{
+        width: 1000px;
+        &__items{
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: 1fr;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+        } 
+    }
+}
+@include desktop{
+    .electrical-goods, .home-items, .garten-items, .sale{
+        width: 700px;
+        &__card{
+            height: 20em;
+            width: 8em;
+        }
+        &__image{
+            width: 8em;
+            height: 8em;
+        }
+        &__items{
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: 1fr;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+        } 
+    }
+}
+@include laptop{
+    .electrical-goods, .home-items, .garten-items, .sale{
+        width: 500px;
+        &__items{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+        } 
+        &__card{
+            height: 20em;
+            width: 10em;
+            padding: 1em;
+            border-right: 1px solid gray;
+            border-bottom: 1px solid gray;
+            border-top: 1px solid gray;
+            border-left: 1px solid gray;
+        }
+    }
+}
+@include tablet{
+    .electrical-goods, .home-items, .garten-items, .sale{
+        width: 300px;
+        &__items{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+        } 
+    }
+}
+@include phone{
+    .electrical-goods, .home-items, .garten-items, .sale{
+        width: 100px;
+        &__items{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(6, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+        } 
+    }
+}

@@ -1,0 +1,27 @@
+@use './variables' as *;
+
+@mixin desktop-big(){
+    @media (width > $breakpoint-xxl) {
+        @content;
+    }
+}
+@mixin desktop(){
+    @media (width < $breakpoint-xxl) {
+        @content;
+    }
+}
+@mixin laptop(){
+    @media (width < $breakpoint-xl) {
+        @content;
+    }
+}
+@mixin tablet(){
+    @media (width < $breakpoint-md) {
+        @content;
+    }
+}
+@mixin phone(){
+    @media (width < $breakpoint-sm) {
+        @content;
+    }
+}

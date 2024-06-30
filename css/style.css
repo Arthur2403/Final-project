@@ -1,0 +1,383 @@
+.open {
+  display: flex !important;
+  padding: 0em !important;
+}
+
+.header {
+  border-bottom: 1px solid gray;
+  padding-bottom: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+}
+
+.header__burger {
+  display: none;
+  position: relative;
+  z-index: 51;
+  align-items: center;
+  justify-content: flex-start;
+  width: 90px;
+  height: 54px;
+  margin-right: 0em;
+}
+
+.header__burger span {
+  height: 4px;
+  width: 80%;
+  transform: scale(1);
+  background-color: gray;
+}
+
+.header__burger::before, .header__burger::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background-color: gray;
+  transition: all 0.3s ease 0s;
+}
+
+.header__burger::before {
+  top: 0;
+}
+
+.header__burger::after {
+  bottom: 0;
+}
+
+.header__burger.active span {
+  transform: scale(0);
+}
+
+.header__burger.active::before {
+  top: 50%;
+  transform: rotate(-45deg) translate(0, -50%);
+}
+
+.header__burger.active::after {
+  bottom: 50%;
+  transform: rotate(45deg) translate(0, 50%);
+}
+
+@media (width < 900px) {
+  .header .sections {
+    display: none;
+  }
+  .header__burger {
+    display: flex;
+  }
+  .header__icon {
+    display: none;
+  }
+  .header__name {
+    margin-top: 5em;
+  }
+  .header__catalog {
+    margin-left: 0em !important;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  .header__news {
+    margin: 0em !important;
+  }
+  .header__menu {
+    display: none;
+  }
+  .header__item1 {
+    display: none;
+    padding: 0em;
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    overflow-y: auto;
+    color: white;
+    padding: 50px 40px;
+    background-color: black;
+    animation: burger-Animation 0.4s;
+  }
+  @keyframes burger-Animation {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+}
+.header__brand {
+  display: inline-flex;
+  align-items: end;
+}
+
+.header__icon {
+  height: 3em;
+  width: 3em;
+}
+
+.header__name {
+  font-size: xx-large;
+  margin-left: 1em;
+}
+
+.header__catalog {
+  display: inline-flex;
+  margin-left: 5em;
+  align-items: end;
+  position: relative;
+}
+
+.header__menu {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: rgb(253, 253, 253);
+  z-index: 52;
+  padding: 1em;
+  top: -1em;
+  left: 14em;
+  opacity: 0%;
+  width: 11em;
+  height: 10em;
+  transition-duration: 100ms, 50ms;
+  transition-property: top, opacity;
+}
+
+.header__menu:hover {
+  top: 0em;
+  opacity: 100%;
+}
+
+.header__menu-item {
+  display: block;
+  border-bottom: 1px solid gray;
+}
+
+.header__catalogword {
+  font-size: xx-large;
+  margin-left: 1em;
+}
+
+.header__news {
+  display: inline-flex;
+  align-items: end;
+  margin-left: 5em;
+}
+
+.header__newsword {
+  font-size: xx-large;
+  margin-left: 1em;
+}
+
+.header__buttons {
+  display: inline-flex;
+  align-items: end;
+  margin-right: 0.5em;
+}
+
+.header__log {
+  height: 3em;
+  width: 7em;
+  border-radius: 15%;
+  background-color: rgb(227, 227, 227);
+  color: gray;
+  border: none;
+}
+
+.header__log:hover {
+  background-color: rgb(180, 180, 180);
+  color: white;
+}
+
+.header__signin {
+  height: 3em;
+  width: 7em;
+  margin-left: 1em;
+  border-radius: 15%;
+  background-color: rgb(144, 255, 84);
+  color: rgb(255, 255, 255);
+  border: none;
+}
+
+.header__signin:hover {
+  background-color: rgb(116, 195, 77);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.electrical-goods, .home-items, .garten-items, .sale {
+  z-index: 10;
+  padding-left: 10em;
+  margin-top: 3em;
+  width: 700px;
+}
+
+.electrical-goods__items, .home-items__items, .garten-items__items, .sale__items {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.electrical-goods__tag, .home-items__tag, .garten-items__tag, .sale__tag {
+  margin-bottom: 1em;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.electrical-goods__card, .home-items__card, .garten-items__card, .sale__card {
+  height: 20em;
+  width: 10em;
+  padding: 1em;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
+}
+
+.electrical-goods__image, .home-items__image, .garten-items__image, .sale__image {
+  width: 10em;
+  height: 10em;
+}
+
+.electrical-goods__name:hover, .home-items__name:hover, .garten-items__name:hover, .sale__name:hover {
+  color: rgb(255, 127, 80);
+  text-decoration: underline;
+}
+
+.electrical-goods__name, .home-items__name, .garten-items__name, .sale__name {
+  height: 5em;
+}
+
+.electrical-goods__price, .home-items__price, .garten-items__price, .sale__price {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.electrical-goods__name-onsale, .home-items__name-onsale, .garten-items__name-onsale, .sale__name-onsale {
+  height: 3.1em;
+}
+
+.electrical-goods__onsale, .home-items__onsale, .garten-items__onsale, .sale__onsale {
+  font-size: small;
+  text-decoration: line-through;
+  color: gray;
+  margin-top: 2em;
+  margin-bottom: 0em;
+}
+
+.electrical-goods__price-onsale, .home-items__price-onsale, .garten-items__price-onsale, .sale__price-onsale {
+  font-weight: bold;
+  margin-top: 0.5em;
+  margin-bottom: 0em;
+  font-size: x-large;
+  color: red;
+}
+
+.electrical-goods__run-out, .home-items__run-out, .garten-items__run-out, .sale__run-out {
+  position: relative;
+}
+
+.electrical-goods__run-out::before, .home-items__run-out::before, .garten-items__run-out::before, .sale__run-out::before {
+  content: "Runnig out";
+  position: absolute;
+  font-size: small;
+  color: red;
+  top: -1em;
+  z-index: 10;
+  font-weight: lighter;
+}
+
+@media (width > 1200px) {
+  .electrical-goods, .home-items, .garten-items, .sale {
+    width: 1000px;
+  }
+  .electrical-goods__items, .home-items__items, .garten-items__items, .sale__items {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+}
+@media (width < 1200px) {
+  .electrical-goods, .home-items, .garten-items, .sale {
+    width: 700px;
+  }
+  .electrical-goods__card, .home-items__card, .garten-items__card, .sale__card {
+    height: 20em;
+    width: 8em;
+  }
+  .electrical-goods__image, .home-items__image, .garten-items__image, .sale__image {
+    width: 8em;
+    height: 8em;
+  }
+  .electrical-goods__items, .home-items__items, .garten-items__items, .sale__items {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+}
+@media (width < 1024px) {
+  .electrical-goods, .home-items, .garten-items, .sale {
+    width: 500px;
+  }
+  .electrical-goods__items, .home-items__items, .garten-items__items, .sale__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+  .electrical-goods__card, .home-items__card, .garten-items__card, .sale__card {
+    height: 20em;
+    width: 10em;
+    padding: 1em;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+  }
+}
+@media (width < 768px) {
+  .electrical-goods, .home-items, .garten-items, .sale {
+    width: 300px;
+  }
+  .electrical-goods__items, .home-items__items, .garten-items__items, .sale__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+}
+@media (width < 576px) {
+  .electrical-goods, .home-items, .garten-items, .sale {
+    width: 100px;
+  }
+  .electrical-goods__items, .home-items__items, .garten-items__items, .sale__items {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

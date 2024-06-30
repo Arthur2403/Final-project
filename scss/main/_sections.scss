@@ -1,0 +1,80 @@
+@use '../variables/breakpoints-media' as *;
+html{
+    scroll-behavior: smooth;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+.electrical-goods, .home-items, .garten-items, .sale{
+    z-index: 10;
+    padding-left: 10em;
+    margin-top: 3em;
+    width: 700px;
+    &__items{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+    &__tag{
+        margin-bottom: 1em;
+        font-size: x-large;
+        font-weight: bold;
+    }
+    &__card{
+        height: 20em;
+        width: 10em;
+        padding: 1em;
+        border-right: 1px solid gray;
+        border-bottom: 1px solid gray;
+        border-top: 1px solid gray;
+    }
+    &__image{
+        width: 10em;
+        height: 10em;
+    }
+    &__name:hover{
+        color: rgb(255, 127, 80);
+        text-decoration: underline;
+    }
+    &__name{
+        height: 5em;
+    }
+    &__price{
+        font-weight: bold;
+        font-size: x-large;
+    }
+    &__name-onsale{
+        height: 3.1em;
+    }
+    &__onsale{
+        font-size: small;
+        text-decoration: line-through;
+        color: gray;
+        margin-top: 2em;
+        margin-bottom: 0em;
+    }
+    &__price-onsale{
+        font-weight: bold;
+        margin-top: 0.5em;
+        margin-bottom: 0em;
+        font-size: x-large;
+        color: red;
+    }
+    &__run-out{
+        position: relative;
+    }
+    &__run-out::before{
+        content: "Runnig out";
+        position: absolute;
+        font-size: small;
+        color: red;
+        top: -1em;
+        z-index: 10;
+        font-weight: lighter;
+    }
+}
+
+

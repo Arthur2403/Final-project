@@ -1,0 +1,89 @@
+@use '../variables/breakpoints-media' as *;
+
+@include desktop-big{
+    .item{
+        &__img{
+            width: 40em;
+            height: 40em;
+        }
+    }
+}
+@include desktop{
+    .item{
+        &__img{
+            width: 30em;
+            height: 30em;
+        }
+        &__details{
+            width: 25em;
+        }
+        &__main{
+            width: 25em;
+        }
+    }
+}
+@include laptop{
+    .item{
+        &__img{
+            width: 20em;
+            height: 20em;
+        }
+        &__details{
+            width: 15em;
+        }
+        &__main{
+            width: 15em;
+            height: 15em;
+            display: flex;
+            flex-direction: column;
+            gap: 3em;
+        }
+        &__buy{
+            width: 13em;
+        }
+        &__credit{
+            width: 13em;
+        }
+
+    }
+}
+@include tablet{
+    .item{
+        &__img{
+            width: 15em;
+            height: 15em;
+        }
+        &__details{
+            width: 10em;
+        }
+        &__main{
+            width: 10em;
+        }
+        &__buy{
+            width: 8em;
+        }
+        &__credit{
+            width: 8em;
+        }
+    }
+}
+@include phone{
+    .item{
+        &__img{
+            width: 10em;
+            height: 10em;
+        }
+        &__details{
+            width: 8em;
+        }
+        &__main{
+            width: 8em;
+        }
+        &__buy{
+            width: 6em;
+        }
+        &__credit{
+            width: 6em;
+        }
+    }
+}

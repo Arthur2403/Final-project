@@ -1,0 +1,408 @@
+.open {
+  display: flex !important;
+  padding: 0em !important;
+}
+
+a {
+  color: #3E77AA;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(255, 127, 80);
+  text-decoration: underline;
+}
+
+.header {
+  border-bottom: 1px solid gray;
+  padding-bottom: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+}
+
+.header__burger {
+  display: none;
+  position: relative;
+  z-index: 51;
+  align-items: center;
+  justify-content: flex-start;
+  width: 90px;
+  height: 54px;
+  margin-right: 0em;
+}
+
+.header__burger span {
+  height: 4px;
+  width: 80%;
+  transform: scale(1);
+  background-color: gray;
+}
+
+.header__burger::before, .header__burger::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background-color: gray;
+  transition: all 0.3s ease 0s;
+}
+
+.header__burger::before {
+  top: 0;
+}
+
+.header__burger::after {
+  bottom: 0;
+}
+
+.header__burger.active span {
+  transform: scale(0);
+}
+
+.header__burger.active::before {
+  top: 50%;
+  transform: rotate(-45deg) translate(0, -50%);
+}
+
+.header__burger.active::after {
+  bottom: 50%;
+  transform: rotate(45deg) translate(0, 50%);
+}
+
+@media (width < 900px) {
+  .header .sections {
+    display: none;
+  }
+  .header__burger {
+    display: flex;
+  }
+  .header__icon {
+    display: none;
+  }
+  .header__name {
+    margin-top: 5em;
+    color: white;
+  }
+  .header__catalog {
+    margin-left: 0em !important;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  .header__news {
+    margin: 0em !important;
+  }
+  .header__menu {
+    display: none;
+  }
+  .header__item1 {
+    display: none;
+    padding: 0em;
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    overflow-y: auto;
+    color: white;
+    padding: 50px 40px;
+    background-color: black;
+    animation: burger-Animation 0.4s;
+  }
+  @keyframes burger-Animation {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+}
+.header__link {
+  color: black;
+}
+
+.header__brand {
+  display: inline-flex;
+  align-items: end;
+}
+
+.header__icon {
+  height: 3em;
+  width: 3em;
+}
+
+.header__name {
+  font-size: xx-large;
+  margin-left: 1em;
+}
+
+.header__catalog {
+  display: inline-flex;
+  margin-left: 5em;
+  align-items: end;
+  position: relative;
+}
+
+.header__catalogword {
+  font-size: xx-large;
+  margin-left: 1em;
+}
+
+.header__news {
+  display: inline-flex;
+  align-items: end;
+  margin-left: 5em;
+}
+
+.header__newsword {
+  font-size: xx-large;
+  margin-left: 1em;
+}
+
+.header__buttons {
+  display: inline-flex;
+  align-items: end;
+  margin-right: 0.5em;
+}
+
+.header__log {
+  height: 3em;
+  width: 7em;
+  border-radius: 15%;
+  background-color: rgb(227, 227, 227);
+  color: gray;
+  border: none;
+}
+
+.header__log:hover {
+  background-color: rgb(180, 180, 180);
+  color: white;
+}
+
+.header__signin {
+  height: 3em;
+  width: 7em;
+  margin-left: 1em;
+  border-radius: 15%;
+  background-color: rgb(144, 255, 84);
+  color: rgb(255, 255, 255);
+  border: none;
+}
+
+.header__signin:hover {
+  background-color: rgb(116, 195, 77);
+}
+
+.item {
+  margin: 2em;
+  display: flex;
+}
+
+.item__img {
+  height: 40em;
+  width: 40em;
+  margin-right: 5em;
+}
+
+.item__name {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.item__details {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid gray;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  border-bottom: none;
+  width: 30em;
+  padding: 0.3em 1em;
+}
+
+.item__seller-rating {
+  display: flex;
+  flex-direction: column;
+}
+
+.item__seller {
+  font-size: medium;
+  color: gray;
+  height: 1em;
+  margin: 0em;
+}
+
+.item__rating {
+  font-weight: bold;
+  height: 1em;
+  margin: 0em;
+  margin-top: 0.5em;
+}
+
+.item__message {
+  height: 3em;
+  width: 3em;
+}
+
+.item__main {
+  display: flex;
+  width: 30em;
+  height: 6em;
+  padding: 0em 1em;
+  border: 1px solid gray;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+}
+
+.item__price {
+  margin-top: 0.2em;
+  font-size: x-large;
+  font-weight: bold;
+  margin-right: 2em;
+  position: relative;
+}
+
+.item__new-price {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.item__onsale {
+  color: red;
+  margin-top: 0em;
+}
+
+.item__price-onsale {
+  font-size: small;
+  color: gray;
+  text-decoration: line-through;
+}
+
+.item__price::after {
+  content: "In stock";
+  font-size: medium;
+  position: absolute;
+  font-weight: bold;
+  color: #47ff47;
+  top: 2em;
+  left: 0em;
+}
+
+.item__buy {
+  width: 15em;
+  height: 3em;
+  margin-top: 0.8em;
+  background-color: rgb(1, 147, 1);
+  color: white;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  border: none;
+  border-radius: 0.5em;
+  font-weight: bold;
+  margin-right: 1em;
+}
+
+.item__buy:hover {
+  background-color: rgb(0, 196, 0);
+}
+
+.item__credit {
+  width: 15em;
+  height: 3em;
+  margin-top: 0.8em;
+  background-color: white;
+  color: rgb(0, 196, 0);
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  border: 1px solid rgb(0, 196, 0);
+  border-radius: 0.5em;
+  font-weight: bold;
+}
+
+.item__credit:hover {
+  background-color: rgba(0, 182, 0, 0.04);
+}
+
+@media (width > 1200px) {
+  .item__img {
+    width: 40em;
+    height: 40em;
+  }
+}
+@media (width < 1200px) {
+  .item__img {
+    width: 30em;
+    height: 30em;
+  }
+  .item__details {
+    width: 25em;
+  }
+  .item__main {
+    width: 25em;
+  }
+}
+@media (width < 1024px) {
+  .item__img {
+    width: 20em;
+    height: 20em;
+  }
+  .item__details {
+    width: 15em;
+  }
+  .item__main {
+    width: 15em;
+    height: 15em;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+  }
+  .item__buy {
+    width: 13em;
+  }
+  .item__credit {
+    width: 13em;
+  }
+}
+@media (width < 768px) {
+  .item__img {
+    width: 15em;
+    height: 15em;
+  }
+  .item__details {
+    width: 10em;
+  }
+  .item__main {
+    width: 10em;
+  }
+  .item__buy {
+    width: 8em;
+  }
+  .item__credit {
+    width: 8em;
+  }
+}
+@media (width < 576px) {
+  .item__img {
+    width: 10em;
+    height: 10em;
+  }
+  .item__details {
+    width: 8em;
+  }
+  .item__main {
+    width: 8em;
+  }
+  .item__buy {
+    width: 6em;
+  }
+  .item__credit {
+    width: 6em;
+  }
+}
+
+/*# sourceMappingURL=items.css.map */

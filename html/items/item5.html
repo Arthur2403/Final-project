@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/items.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__burger">
+            <span class="header__burger-item"></span>
+        </div>
+        <div class="header__item1">
+            <a href="/html/shop.html" class="header__link">
+                <div class="header__brand">
+                    <img src="/img/shop.png" alt="icon" class="header__icon">
+                    <span class="header__name">Shop</span>
+                </div>
+            </a>
+            <div class="header__catalog">
+                <img src="/img/catalog.png" alt="catalog" class="header__icon">
+                <span class="header__catalogword">Catalog</span>
+            </div>
+            <div class="header__news">
+                <img src="/img/news.png" alt="news" class="header__icon">
+                <span class="header__newsword">News</span>
+            </div>
+        </div>
+        <div class="header__buttons">
+            <button class="header__log">Log in</button>
+            <button class="header__signin">Sign in</button>
+        </div>
+    </header>
+    <main class="item">
+        <img src="/img/ram0.jpeg" alt="" class="item__img">
+        <div class="item__text">
+            <p class="item__name">
+                Оперативна пам'ять Kingston Fury DDR5-6000 32768MB PC5-48000 (Kit of 2x16384) Beast Black (KF560C40BBK2-32)
+            </p>
+            <div class="item__details">
+                <div class="item__seller-rating">
+                    <p class="item__seller">Seller: <a href="/html/shop.html">Shop</a></p>
+                </div>
+            </div>
+            <div class="item__main">
+                <div class="item__new-price">
+                    <span class="item__price-onsale">6299₴</span>
+                    <span class="item__price item__onsale">5699₴</span>
+                </div>
+                <button class="item__buy">Buy</button>
+                <button class="item__credit"><img src="" alt="" class="item__credit-icon">Buy in credit</button>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.querySelector('.header__burger').addEventListener('click', function(){
+            this.classList.toggle('active');
+            document.querySelector('.header__item1').classList.toggle('open')
+        })
+    </script>
+</body>
+</html>
